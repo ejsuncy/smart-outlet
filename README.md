@@ -87,20 +87,60 @@ At my work, we have been learning about arduino boards and building robots in a 
 * The question remains, however: does a high signal in or a low signal in cause the relay to switch? We should test it! 
 * Here I have a 6-volt 50mA Miniature Lamp and two 3-volt AA battery packs hooked up in series to produce 6V. We'll use the batteries to power the lamp. Notice that the lamp blue lead is common/ground, and the lamp white lead is VCC.
 
-<img src="lamp.jpg" width="400">
+<img src="lamp.jpg" width="700">
 
 * We'll add in the relay in its default, powered-off state, and connect the blue lamp lead to ground and the white lamp lead to diagram terminal 3. We add a white jumper wire to diagram terminal 2 and to VCC of the batteries. We see that the lamp is powered on, verifying that diagram terminals 3 and 2 are normally connected, closing the circuit.
 
-<img src="lamp-relay-1.jpg" width="400">
+<img src="lamp-relay-1.jpg" width="700">
 
 * Now we remove the white lamp lead from its relay terminal and connect it to diagram terminal 1. We also remove the jumper wire from diagram terminal 3 and connect it to diagram terminal 2. We see that the lamp is off, verifying that diagram terminals 1 and 2 are normally disconnected, leaving that circuit open.
 
-<img src="lamp-relay-2.jpg" width="400">
+<img src="lamp-relay-2.jpg" width="700">
 
 * Now we want to verify the behavior of the relay. We will power the relay board with the battery packs as well (I probably shouldn't have put 6 volts through a 5V relay board, but I did. Luckily it didn't burn up). We leave the lamp as it is currently connected (this is the setup we want: the circuit will be normally open—diagram terminals 1 and 2 are disconnected—then we apply a signal to connect 1 and 2, thus closing the circuit). We connect a jumper wire from the battery VCC to VCC in on the relay board (the bottom left yellow box on the diagram, line 4). We also connect a jumper wire from the battery ground to the ground on the relay board (the bottom left yellow box on the diagram, line 1). Lastly, we connect a jumper wire from battery ground to signal input 1 (the bottom left yellow box on the diagram, line 3). You should hear a click and see the lamp turn on! Removing the signal should also click and the lamp should turn off. This was just a guess—a low signal activates the relay. I'm not an electrical engineer and don't know how to read the complete diagram (though I'm learning!). We could have just as easily connected the battery VCC to signal 1 input; we would have seen nothing happen and tried connecting signal 1 input to ground, which would show the correct behavior.
 
-<img src="lamp-relay-3.jpg" width="400">
+<img src="lamp-relay-3.jpg" width="700">
 
-<img src="lamp-relay-4.jpg" width="400">
+<img src="lamp-relay-4.jpg" width="700">
+
+##Step 3: Connect Power Cable to Relay and Outlet
+* We will need to splice the power cable: the neutral will need to be spliced into 2, and the hot will need to be spliced into 3, and the ground will need to be spliced into 2.
+* One neutral splice will be connected to the left side of the electrical outlet (the side with the brass tab intact), and the other will be connected to the AC/DC converter module. 
+* One ground splice will be connected to the green screw at the bottom of the electrical outlet, and the other will be connected to the green screw at the bottom back of the gang box.
+* One hot splice will be connected to the top electrical outlet terminal on the right side, another will be connected to the bottom electrical outlet on the right side, and the third splice will be connected to the AC/DC converter module.
+* Cut off some of the power cable to give you extra wires to splice.
+* Hook the wires that will be spliced around one another to provide mechanical strength, then solder them together. 
+* Note: in these pictures, I made the mistake of breaking off both brass tabs on the outlet, so I needed to splice the neutral wire into 3 as well. 
+
+<img src="splice-1.jpg" width="700">
+
+<img src="splice-2.jpg" width="700">
+
+* Here you can see where the neutral wire comes from the power cable, is spliced into 3 (or two, if you left the brass tab intact for the neutral side), and is connected to the left side of the outlet, with one wire left over for the AC/DC converter.
+
+<img src="splice-3.jpg" width="700">
+
+* In this image below, the outlet is upside down. We can see how we want the hot splices to be hooked up to the relay and the outlet. Normally, we want the outlet to be connected to nothing, so we connect the top (bottom in the picture) outlet hot wire to relay K2's terminal 2, and leave terminal 3 disconnected. Then when we apply a low signal to relay K2, it will connect K2's terminal 2 to K2's terminal 1. So that means we need to connect K2's terminal 1 to the hot wire coming from the power cable. The process is the same for relay K1: we connect the bottom (top in the picture) outlet's hot terminal to K1's terminal 2 and the power cable's hot splice to K1's terminal 1, thus leaving K1's terminal 3 disconnected.
+
+<img src="splice-4.jpg" width="700">
+
+* Another angle of the outlet after splicing:
+
+<img src="splice-5.jpg" width="700">
+
+<img src="splice-6.jpg" width="700">
+
+* And after soldering:
+
+<img src="splice-7.jpg" width="700">
+
+* I find it easier to apply a couple coats of liquid tape with the wires up in the air.
+
+<img src="splice-8.jpg" width="700">
+
+<img src="splice-9.jpg" width="700">
 
 
+
+
+Also: $5 pizzas from 7 Eleven are delicious, and the pizza box makes a good soldering station :)
