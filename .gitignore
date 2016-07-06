@@ -1,2 +1,7 @@
 .pioenvs
 CMakeListsPrivate.txt
+.idea
+.travis.yml
+CMakeLists.txt
+lib
+platformio.ini
