@@ -143,7 +143,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 ##Step 4: Connect AC/DC Converter to Wemos and relay
 * Since our incoming voltage is 120VAC, and both our relay board and the wemos operate at 5v, we connect the AC wires to the AC/DC converter, which outputs 5v. We solder it and apply liquid tape. Also, we connect jumper wires to the 5v out pins. Here, I used purple for positive and blue for negative.
 
-<img src="img/converter2.jpg width="700">
+<img src="img/converter2.jpg" width="700">
 
 * Now the purple and blue wires will need to be spliced, since both the relay board and the wemos board need 5v to operate. Splice, solder, and apply liquid tape.
 
