@@ -1,59 +1,28 @@
-// Borrowed example code from https://gist.github.com/igrr/43d5c52328e955bb6b09
-
-#include <ESP8266WiFi.h>
-#include <WiFiUDP.h>
-
-const char* ssid = "..........";
-const char* password = "...........";
-
-WiFiUDP listener;
+#include <Arduino.h>
+#include <pins_arduino.h>
+#define OUTLET_1 D3
+#define OUTLET_2 D1
 
 void setup() {
-    Serial.begin(115200);
-    Serial.setDebugOutput(true);
-    Serial.println("");
-    Serial.println("OTA test");
-    WiFi.begin(ssid, password);
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println("");
-    Serial.print("Connected to ");
-    Serial.println(ssid);
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
-
-    listener.begin(8266);
-
-    Serial.print("Sketch size: ");
-    Serial.println(ESP.getSketchSize());
-    Serial.print("Free size: ");
-    Serial.println(ESP.getFreeSketchSpace());
+    pinMode(OUTLET_1, OUTPUT);  // initialize relay signal GPIO pins as output
+    pinMode(OUTLET_2, OUTPUT);
+    pinMode(BUILTIN_LED, OUTPUT);
+    digitalWrite(OUTLET_1, LOW); // Start with both outlets OFF
+    digitalWrite(OUTLET_2, LOW);
+    digitalWrite(BUILTIN_LED, LOW);
 }
 
 void loop() {
-    int cb = listener.parsePacket();
-    if (cb) {
-        IPAddress remote = listener.remoteIP();
-        int cmd  = listener.parseInt();
-        int port = listener.parseInt();
-        int sz   = listener.parseInt();
-        Serial.println("Got packet");
-        Serial.printf("%d %d %d\r\n", cmd, port, sz);
-        WiFiClient cl;
-        if (!cl.connect(remote, port)) {
-            Serial.println("failed to connect");
-            return;
-        }
-
-        listener.stop();
-
-        if (!ESP.updateSketch(cl, sz)) {
-            Serial.println("Update failed");
-        }
-    }
-
-    delay(100);
+    digitalWrite(BUILTIN_LED, HIGH);
+    delay(1000);
+    digitalWrite(OUTLET_1, HIGH);
+    delay(1000);
+    digitalWrite(OUTLET_2, HIGH);
+    delay(1000);
+    digitalWrite(BUILTIN_LED, LOW);
+    delay(1000);
+    digitalWrite(OUTLET_1, LOW);
+    delay(1000);
+    digitalWrite(OUTLET_2, LOW);
+    delay(1000);
 }
-

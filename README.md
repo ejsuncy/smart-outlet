@@ -140,6 +140,61 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/splice-9.jpg" width="700">
 
+##Step 4: Connect AC/DC Converter to Wemos and relay
+* Since our incoming voltage is 120VAC, and both our relay board and the wemos operate at 5v, we connect the AC wires to the AC/DC converter, which outputs 5v. We solder it and apply liquid tape. Also, we connect jumper wires to the 5v out pins. Here, I used purple for positive and blue for negative.
+
+<img src="img/converter2.jpg width="700">
+
+* Now the purple and blue wires will need to be spliced, since both the relay board and the wemos board need 5v to operate. Splice, solder, and apply liquid tape.
+
+<img src="img/5v-splice.jpg" width="700">
+
+* Connect the 5v wires to the appropriate pins on both boards. Here we see in the first image how the positive 5v purple wire plugs in to VCC on the relay board, and the blue negative wire plugs in to the ground pin on the relay board. Also show are the yellow and orange wires, which are the signal wires for relay 1 and relay 2. In the images we can also see how the red wire is spliced from the purple wire, and it plugs in to the wemos vcc pin, while the black wire splices from the blue wire and plugs in to the wemos ground pin. The yellow and orange wires connect the wemos digital I/O pins D1 and D2 to the signal in 1 and signal in 2 pins on the relay board. For reasons I'll cover later, switch the orange D2 pin to D3 instead.
+
+<img src="img/relay-wires.jpg" width="700">
+
+<img src="img/wemos-wires.jpg" width="700">
+
+##Step 5: Shove everything into the electrical box
+
+* We should give things an extra coat of electrical tape so that they don't short against the metal electrical box:
+
+<img src="img/insulate.jpg" width="700">
+
+* It's kind of tricky to fit everything in to the box. I bent off the top and bottom metal brackets of the outlet, since they aren't being used. Only the single screw portion of the bracket remains on the top and bottom of the outlet. 
+
+<img src="img/bracket.jpg" width="700">
+
+* Also, I swapped the wemos out for one that I only solder on the pin housing to one side of the wemos board. That way it fits better. Also, the wires that connect to the pin housing use 90-degree angled pins so that they fit better and don't bump in to the body of the outlet. I used some foam to insulate both sides of the wemos, and I plugged in a small usb cable to the bottom of the wemos (not pictured here). I fed the end of the usb cable through the bottom of the electrical box, where it can be easily accessed for code updates. I also oriented the wemos chip so that the wireless antenna is pointed toward the faceplate of the outlet. That way it can get better wifi signal and you can also faintly see the built-in blue LED light on the wemos from the outside of the box.
+
+<img src="img/foam.jpg" width="700">
+
+<img src="img/angle-pins.jpg" width="700">
+
+<img src="img/tight.jpg" width="700">
+
+##Step 5: Close up the box
+* Now we are ready to close up the box. Make sure the USB cable is accessible from the bottom of the box. Screw down the bracket holding the cable going into the top of the box. Screw on the faceplate.
+
+<img src="img/screw-in.jpg" width="700">
+
+<img src="img/usb.jpg" width="700">
+
+<img src="img/closed-box.jpg" width="700">
+
+<img src="img/upload-code.jpg" width="700">
+
+##Step 6: Code!
+* I shoved the USB cable in the box, just in case I botch the OTA code uploads. 
+* I have C-Lion by Intellij, which I love because I also use Intellij IDEA at work and Webstorm for my web projects. I like the environment, especially with the VIM plugin.
+* I use platformio to set everything up.
+* Begin by cloning this repository, or just download the src folder if you don't want all these images and markdown included.
+* Install [Platformio](http://docs.platformio.org/en/latest/installation.html) command line tool
+* I just used the `brew install platformio` command since I'm on a mac. It worked beautifully!
+* `cd` in to the repo directory (or the src directory), and use `platformio init --ide clion --board d1_mini`
+* Now you can open in CLion and use the preconfigured Build configurations to build and upload your code
+* In order for the Wemos to be recognized on the computer, make sure to install any necessary drivers (see the [Wemos installation page](http://www.wemos.cc/downloads/))
+* Go ahead and use the Build functionality in CLion to build and upload your code. Note that the "Run" button doesn't work. Just use the menu item `Run` > `Build` on the selected configuration.
 
 
 
