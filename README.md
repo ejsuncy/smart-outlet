@@ -191,11 +191,8 @@ At my work, we have been learning about arduino boards and building robots in a 
 * Begin by cloning this repository, or just download the src folder if you don't want all these images and markdown included.
 * Install [Platformio](http://docs.platformio.org/en/latest/installation.html) command line tool
 * I just used the `brew install platformio` command since I'm on a mac. It worked beautifully!
-* `cd` in to the repo directory (or the src directory), and use `platformio init --ide clion --board d1_mini`
+* `cd` in to the repo directory (or the src directory), and use `platformio init --ide clion --board huzzah`
 * Now you can open in CLion and use the preconfigured Build configurations to build and upload your code
 * In order for the Wemos to be recognized on the computer, make sure to install any necessary drivers (see the [Wemos installation page](http://www.wemos.cc/downloads/))
 * Go ahead and use the Build functionality in CLion to build and upload your code. Note that the "Run" button doesn't work. Just use the menu item `Run` > `Build` on the selected configuration.
 
-
-
-Also: $5 pizzas from 7 Eleven are delicious, and the pizza box makes a good soldering station :)
