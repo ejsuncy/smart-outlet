@@ -5,3 +5,6 @@ CMakeListsPrivate.txt
 CMakeLists.txt
 lib
 platformio.ini
+mobile-app/node_modules
+mobile-app/platforms
+mobile-app/.DS_Store

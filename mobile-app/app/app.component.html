@@ -1,0 +1,9 @@
+<StackLayout>
+    <Label class="title" text="WebSocket Status:"></Label>
+    <Label [text]="webSocketStatus" class="title"></Label>
+
+    <Label class="title" text="Message:"></Label>
+    <Label [text]="message" class="title"></Label>
+
+    <Button (tap)="sendNumber()" text="Start toggling!"></Button>
+</StackLayout>
