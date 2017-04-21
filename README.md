@@ -56,12 +56,12 @@ At my work, we have been learning about arduino boards and building robots in a 
 * various jumper wires
 * 6V, 50mA miniature lamp
 
-##Software
+## Software
 * Arduino IDE or C Lion & Platformio
 * `smart-outlet.cpp`
 
-#Steps
-##Step 1: Prepare the power cable
+# Steps
+## Step 1: Prepare the power cable
 * Cut off the end of the power cable that is farthest from where you'd plug it in the wall
 * Screw in the clamp connector to the hole in the top of the gang box
 * Feed the cut-off end through the hole and clamp connector in the gang box, from the outside of the box toward the inside.
@@ -75,7 +75,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 * There's a brass tab on each side of the outlet: the left side tab connects the neutral terminal for the top outlet and the neutral terminal for the bottom outlet, while the right side tab connects the hot terminal for the top outlet and the hot terminal for the bottom outlet. This causes the outlets to be switched together. Since we want the two outlets to be powered independently, we want to break the tab off on the right (hot) side. Grab right tab with pliars and bend it back and forth until it breaks off. Leave the left (neutral) tab intact.
 
-##Step 2: Test the relays
+## Step 2: Test the relays
 * Checkout the diagram for the relays:
 
 <img src="img/relay-diagram.jpg" width="700">
@@ -103,7 +103,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/lamp-relay-4.jpg" width="700">
 
-##Step 3: Connect Power Cable to Relay and Outlet
+## Step 3: Connect Power Cable to Relay and Outlet
 * We will need to splice the power cable: the neutral will need to be spliced into 2, and the hot will need to be spliced into 3, and the ground will need to be spliced into 2.
 * One neutral splice will be connected to the left side of the electrical outlet (the side with the brass tab intact), and the other will be connected to the AC/DC converter module. 
 * One ground splice will be connected to the green screw at the bottom of the electrical outlet, and the other will be connected to the green screw at the bottom back of the gang box.
@@ -140,7 +140,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/splice-9.jpg" width="700">
 
-##Step 4: Connect AC/DC Converter to Wemos and relay
+## Step 4: Connect AC/DC Converter to Wemos and relay
 * Since our incoming voltage is 120VAC, and both our relay board and the wemos operate at 5v, we connect the AC wires to the AC/DC converter, which outputs 5v. We solder it and apply liquid tape. Also, we connect jumper wires to the 5v out pins. Here, I used purple for positive and blue for negative.
 
 <img src="img/converter2.jpg" width="700">
@@ -155,7 +155,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/wemos-wires.jpg" width="700">
 
-##Step 5: Shove everything into the electrical box
+## Step 5: Shove everything into the electrical box
 
 * We should give things an extra coat of electrical tape so that they don't short against the metal electrical box:
 
@@ -173,7 +173,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/tight.jpg" width="700">
 
-##Step 5: Close up the box
+## Step 5: Close up the box
 * Now we are ready to close up the box. Make sure the USB cable is accessible from the bottom of the box. Screw down the bracket holding the cable going into the top of the box. Screw on the faceplate.
 
 <img src="img/screw-in.jpg" width="700">
@@ -184,7 +184,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/upload-code.jpg" width="700">
 
-##Step 6: Code!
+## Step 6: Code!
 * I shoved the USB cable in the box, just in case I botch the OTA code uploads. 
 * I have C-Lion by Intellij, which I love because I also use Intellij IDEA at work and Webstorm for my web projects. I like the environment, especially with the VIM plugin.
 * I use platformio to set everything up.
