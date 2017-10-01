@@ -25,7 +25,7 @@ At my work, we have been learning about arduino boards and building robots in a 
 
 <img src="img/2-channel-relay.jpg" width="200">
 
-* [WeMos D1-mini](http://www.wemos.cc/Products/d1_mini.html) (Two are pictured here for a top & bottom view)
+* [WeMos D1-mini](https://wiki.wemos.cc/products:d1:d1_mini) (Two are pictured here for a top & bottom view)
 
 <img src="img/wemos.jpg" width="200">
 
