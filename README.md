@@ -1,3 +1,5 @@
+> :warning: This repository is now archived and will no longer receive updates, including security updates.
+
 # Smart Outlet
 The purpose of this project is to use a ESP8266-backed [WeMos](http://www.wemos.cc) chip and a 2-relay interface board inside an extra-deep single-gang box to create a smart electrical outlet. 
 
